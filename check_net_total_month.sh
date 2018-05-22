@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VERSION="Version 0.1a"
-AUTHOR="(c) 2017 Hans-Henrik Pedersen (hansg@reto.dk)"
+AUTHOR="(c) 2017 Hans-Henrik Pedersen"
 
 
 ###############################################################################
