@@ -112,13 +112,11 @@ case "$1" in
            ;;
    esac
 done
-
 EXITCODE=0
 VNSTAT=/usr/bin/vnstat
 #RESULT=`vnstat -i eth1 | awk '$7~/total/ {print $8,$9}'`
-
-RXTOTAL=`vnstat --xml | grep -E -m 1 -o "<rx>(.*)</rx>" | sed 's|^<rx>\(.*\)</rx>$|\1|'`
-TXTOTAL=`vnstat --xml | grep -E -m 1 -o "<tx>(.*)</tx>" | sed 's|^<tx>\(.*\)</tx>$|\1|'`
+RXTOTAL=`vnstat  --xml  | grep -E -m 1 -o "<month id=\"0\".*><rx>(.*)</rx>" | awk -F">" '{print$9}' | awk -F"<" '{print $1}'`
+TXTOTAL=`vnstat  --xml  | grep -E -m 1 -o "<month id=\"0\".*><tx>(.*)</tx>" | awk -F">" '{print$9}' | awk -F"<" '{print $1}'`
 
 TOTAL_KB=$[RXTOTAL+TXTOTAL]
 
@@ -137,3 +135,5 @@ else
   exit 0
 fi
 exit 3
+
+
