@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VERSION="Version 0.1a"
-AUTHOR="(c) 2017 Hans-Henrik Pedersen"
+VERSION="Version 0.1b"
+AUTHOR="(c) 2018 Hans-Henrik Pedersen"
 
 
 ###############################################################################
